@@ -6,23 +6,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function open()
     {
-        $this->middleware('auth');
+        $data = "This data is open and can be accessed without the client being authenticated";
+        return response()->json(compact('data'),200);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function closed()
     {
-        return view('home');
+        $data = "Only authorized users can see this";
+        return response()->json(compact('data'),200);
     }
 }

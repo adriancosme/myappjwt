@@ -17,18 +17,18 @@ return [
 
     'paths' => ['api/*'],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://myappjwt.test'],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['Content-Type', 'X-Auth-Token', 'X-Token-Auth', 'X-Requested-With', 'Authorization', 'Access-Control-Request-Method'. 'Access-Control-Request-Headers', 'Access-Control-Allow-Origin'],
 
-    'exposed_headers' => [],
+    'exposed_headers' => [''],
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];
